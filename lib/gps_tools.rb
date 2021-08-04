@@ -1,6 +1,3 @@
-require 'gps_tools/distance'
-require 'gps_tools/geometry'
-
 class GPSTools
     ##
     # Returns the distance in miles (unit = "mile"), kilometers (unit = "km"), or nautical miles (unit = "nm")
@@ -18,3 +15,6 @@ class GPSTools
         return geometry.in_polygon?(polygon, coord)
     end
 end
+
+require 'gps_tools/distance'
+require 'gps_tools/geometry'

@@ -1,4 +1,4 @@
-class Geometry
+class GPSTools::Geometry
     def in_radius?(radius, center, coord)
         distance = Distance.new.get_distance(center, coord)
         distance <= radius

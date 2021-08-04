@@ -1,4 +1,4 @@
-class Distance
+class GPSTools::Distance
     def initialize(unit = "mile")
         @unit = unit
         case @unit
