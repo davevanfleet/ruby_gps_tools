@@ -21,3 +21,6 @@ in_polygon = GPSTools.in_polygon?(polygon, [40, 40])
 
 ```
 
+## Licence
+
+This project is open source, licenced under the MIT license.  See `LICENSE` for more information.
