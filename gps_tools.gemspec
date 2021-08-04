@@ -10,4 +10,6 @@ Gem::Specification.new do |s|
       'https://rubygems.org/gems/gps_tools'
     s.license       = 'MIT'
     s.add_development_dependency "rspec"
+    s.rdoc_options += ['-m', 'README.rdoc', '-x', 'lib/(?!gps_tools.rb).*', 'lib/gps_tools.rb', 'LICENSE', 'README.rdoc']
+    s.extra_rdoc_files = []
   end

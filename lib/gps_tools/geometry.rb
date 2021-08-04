@@ -1,4 +1,9 @@
 class Geometry
+    def in_radius?(radius, center, coord)
+        distance = Distance.new.get_distance(center, coord)
+        distance <= radius
+    end
+
     def in_polygon?(polygon, coord)
         n = polygon.length
 
