@@ -1,5 +1,5 @@
 class Distance
-    def initialize(unit)
+    def initialize(unit = "mile")
         @unit = unit
         case @unit
         when "mile"
@@ -11,11 +11,16 @@ class Distance
         end
     end
 
-    def get_distance(lat1, long1, lat2, long2)
-        lat_diff = degrees_to_radians(lat2 - lat1)
-        long_diff = degrees_to_radians(long2 - long1)
+    def get_distance(coord1, coord2)
+        lat1 = coord1[0]
+        long1 = coord1[1]
+        lat2 = coord2[0]
+        long2 = coord2[1]
 
-        a = (Math.sin(lat_diff/2) * Math.sin(lat_diff/2)) + (Math.sin(long_diff/2) * Math.sin(long_diff/2) * Math.cos(lat1) * Math.cos(lat2))
+        lat_diff = lat2 - lat1
+        long_diff = long2 - long1
+
+        a = Math.sin(degrees_to_radians(lat_diff)/2) * Math.sin(degrees_to_radians(lat_diff)/2) + Math.sin(degrees_to_radians(long_diff)/2) * Math.sin(degrees_to_radians(long_diff)/2) * Math.cos(degrees_to_radians(lat1)) * Math.cos(degrees_to_radians(lat2))
         c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
         
         return @earth_radius * c

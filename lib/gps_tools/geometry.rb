@@ -1,5 +1,3 @@
-require 'pry'
-
 class Geometry
     def in_polygon?(polygon, coord)
         n = polygon.length
@@ -25,7 +23,7 @@ class Geometry
 
                 # Special case - catches case where point is on an edge
                 # if lies on an edge, return true right away
-                if orientation(polygon[i], coord, polygon[i+1]) == 0 && on_segment(polygon[i], coord, polygon[i+1])
+                if orientation(polygon[i], coord, next_point) == 0 && on_segment(polygon[i], coord, next_point)
                     return true
                 end
 
