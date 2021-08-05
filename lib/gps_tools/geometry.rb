@@ -40,11 +40,23 @@ class GPSTools::Geometry
     end
 
     ##
+    # Returns a new array containing all coordinates within the given polygon
+    def filter_by_polygon(polygon, coords)
+        coords.select { |coord| in_polygon?(polygon, coord) }
+    end
+
+    ##
     # Returns a boolean that identifies if a given gps coordinate, coord, is within
     # a given radius of a center point, center
     def in_radius?(radius, center, coord)
-        distance = Distance.new.get_distance(center, coord)
+        distance = GPSTools::Distance.new.get_distance(center, coord)
         distance <= radius
+    end
+
+    ##
+    # Returns a new array containing all coordinates within the given radius
+    def filter_by_radius(radius, center, coords)
+        coords.select{ |coord| in_radius?(radius, center, coord) }
     end
 
     private

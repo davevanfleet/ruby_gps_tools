@@ -17,11 +17,25 @@ class GPSTools
     end
 
     ##
+    # Returns a new array containing all coordinates within the given polygon
+    def self.filter_by_polygon(polygon, coords)
+        geometry = Geometry.new()
+        return geometry.filter_by_polygon(polygon, coords)
+    end
+
+    ##
     # Returns a boolean that identifies if a given gps coordinate, coord, is within
     # a given radius of a center point, center
     def self.in_radius?(radius, center, coord)
         geometry = Geometry.new()
         return geometry.in_radius?(radius, center, coord)
+    end
+
+    ##
+    # Returns a new array containing all coordinates within the given radius
+    def self.filter_by_radius(radius, center, coords)
+        geometry = Geometery.new()
+        return geometry.filter_by_radius(radius, center, coords)
     end
 end
 
