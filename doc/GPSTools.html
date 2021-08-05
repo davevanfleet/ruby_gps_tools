@@ -74,6 +74,7 @@
   <ul class="link-list" role="directory">
     <li ><a href="#method-c-distance">::distance</a>
     <li ><a href="#method-c-in_polygon-3F">::in_polygon?</a>
+    <li ><a href="#method-c-in_radius-3F">::in_radius?</a>
   </ul>
 </div>
 
@@ -114,7 +115,8 @@
             <pre><span class="ruby-comment"># File lib/gps_tools.rb, line 5</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">coord1</span>, <span class="ruby-identifier">coord2</span>, <span class="ruby-identifier">unit</span> = <span class="ruby-string">&quot;mile&quot;</span>)
     <span class="ruby-identifier">distance_tool</span> = <span class="ruby-constant">Distance</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">unit</span>)
-    <span class="ruby-keyword">return</span> <span class="ruby-identifier">distance_tool</span>.<span class="ruby-identifier">get_distance</span>(<span class="ruby-identifier">coord1</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">coord1</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">coord2</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">coord2</span>[<span class="ruby-value">1</span>])
+    <span class="ruby-identifier">distance</span> = <span class="ruby-identifier">distance_tool</span>.<span class="ruby-identifier">get_distance</span>(<span class="ruby-identifier">coord1</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">coord1</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">coord2</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">coord2</span>[<span class="ruby-value">1</span>])
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">distance</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -133,10 +135,32 @@
           <p>Returns a boolean that identifies if a given gps coordinate, coord, is within a given polygon (array of [lat, lng])</p>
 
           <div class="method-source-code" id="in_polygon-3F-source">
-            <pre><span class="ruby-comment"># File lib/gps_tools.rb, line 13</span>
+            <pre><span class="ruby-comment"># File lib/gps_tools.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">in_polygon?</span>(<span class="ruby-identifier">polygon</span>, <span class="ruby-identifier">coord</span>)
     <span class="ruby-identifier">geometry</span> = <span class="ruby-constant">Geometry</span>.<span class="ruby-identifier">new</span>()
     <span class="ruby-keyword">return</span> <span class="ruby-identifier">geometry</span>.<span class="ruby-identifier">in_polygon?</span>(<span class="ruby-identifier">polygon</span>, <span class="ruby-identifier">coord</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-in_radius-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">in_radius?</span><span
+            class="method-args">(radius, center, coord)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Returns a boolean that identifies if a given gps coordinate, coord, is within a given radius of a center point, center</p>
+
+          <div class="method-source-code" id="in_radius-3F-source">
+            <pre><span class="ruby-comment"># File lib/gps_tools.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">in_radius?</span>(<span class="ruby-identifier">radius</span>, <span class="ruby-identifier">center</span>, <span class="ruby-identifier">coord</span>)
+    <span class="ruby-identifier">geometry</span> = <span class="ruby-constant">Geometry</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">geometry</span>.<span class="ruby-identifier">in_radius?</span>(<span class="ruby-identifier">radius</span>, <span class="ruby-identifier">center</span>, <span class="ruby-identifier">coord</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

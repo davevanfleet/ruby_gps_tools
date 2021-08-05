@@ -1,12 +1,12 @@
-Wed, 04 Aug 2021 17:48:26 -0400
+Wed, 04 Aug 2021 20:44:30 -0400
 Gemfile	Wed, 04 Aug 2021 11:54:11 -0400
 Gemfile.lock	Wed, 04 Aug 2021 11:56:40 -0400
 LICENSE	Wed, 04 Aug 2021 10:28:10 -0400
 README.md	Wed, 04 Aug 2021 10:28:46 -0400
 gps_tools-0.1.0.gem	Wed, 04 Aug 2021 17:48:07 -0400
-lib/gps_tools/distance.rb	Wed, 04 Aug 2021 17:46:25 -0400
-lib/gps_tools/geometry.rb	Wed, 04 Aug 2021 17:46:25 -0400
-lib/gps_tools.rb	Wed, 04 Aug 2021 17:48:04 -0400
+lib/gps_tools/distance.rb	Wed, 04 Aug 2021 20:44:00 -0400
+lib/gps_tools/geometry.rb	Wed, 04 Aug 2021 20:44:00 -0400
+lib/gps_tools.rb	Wed, 04 Aug 2021 20:42:08 -0400
 spec/distance_spec.rb	Wed, 04 Aug 2021 12:18:05 -0400
 spec/geometery_spec.rb	Wed, 04 Aug 2021 12:28:48 -0400
 spec/spec_helper.rb	Wed, 04 Aug 2021 11:57:34 -0400

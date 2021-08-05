@@ -108,10 +108,10 @@
         </div>
 
         <div class="method-description">
-          
+          <p>Returns a boolean that identifies if a given gps coordinate, coord, is within a given polygon (array of [lat, lng])</p>
 
           <div class="method-source-code" id="in_polygon-3F-source">
-            <pre><span class="ruby-comment"># File lib/gps_tools/geometry.rb, line 7</span>
+            <pre><span class="ruby-comment"># File lib/gps_tools/geometry.rb, line 5</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">in_polygon?</span>(<span class="ruby-identifier">polygon</span>, <span class="ruby-identifier">coord</span>)
     <span class="ruby-identifier">n</span> = <span class="ruby-identifier">polygon</span>.<span class="ruby-identifier">length</span>
 
@@ -162,10 +162,10 @@
         </div>
 
         <div class="method-description">
-          
+          <p>Returns a boolean that identifies if a given gps coordinate, coord, is within a given radius of a center point, center</p>
 
           <div class="method-source-code" id="in_radius-3F-source">
-            <pre><span class="ruby-comment"># File lib/gps_tools/geometry.rb, line 2</span>
+            <pre><span class="ruby-comment"># File lib/gps_tools/geometry.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">in_radius?</span>(<span class="ruby-identifier">radius</span>, <span class="ruby-identifier">center</span>, <span class="ruby-identifier">coord</span>)
     <span class="ruby-identifier">distance</span> = <span class="ruby-constant">Distance</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">get_distance</span>(<span class="ruby-identifier">center</span>, <span class="ruby-identifier">coord</span>)
     <span class="ruby-identifier">distance</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">radius</span>

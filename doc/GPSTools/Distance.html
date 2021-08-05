@@ -144,10 +144,10 @@
         </div>
 
         <div class="method-description">
-          
+          <p>Returns the distance in miles (unit = “mile”), kilometers (unit = “km”), or nautical miles (unit = “nm”) between two gps coordinates, coord1 and coord2</p>
 
           <div class="method-source-code" id="get_distance-source">
-            <pre><span class="ruby-comment"># File lib/gps_tools/distance.rb, line 14</span>
+            <pre><span class="ruby-comment"># File lib/gps_tools/distance.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_distance</span>(<span class="ruby-identifier">coord1</span>, <span class="ruby-identifier">coord2</span>)
     <span class="ruby-identifier">lat1</span> = <span class="ruby-identifier">coord1</span>[<span class="ruby-value">0</span>]
     <span class="ruby-identifier">long1</span> = <span class="ruby-identifier">coord1</span>[<span class="ruby-value">1</span>]
@@ -160,7 +160,8 @@
     <span class="ruby-identifier">a</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">degrees_to_radians</span>(<span class="ruby-identifier">lat_diff</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>) <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">degrees_to_radians</span>(<span class="ruby-identifier">lat_diff</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>) <span class="ruby-operator">+</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">degrees_to_radians</span>(<span class="ruby-identifier">long_diff</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>) <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">degrees_to_radians</span>(<span class="ruby-identifier">long_diff</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>) <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">degrees_to_radians</span>(<span class="ruby-identifier">lat1</span>)) <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">degrees_to_radians</span>(<span class="ruby-identifier">lat2</span>))
     <span class="ruby-identifier">c</span> = <span class="ruby-value">2</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">atan2</span>(<span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">a</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-value">1</span><span class="ruby-operator">-</span><span class="ruby-identifier">a</span>))
     
-    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@earth_radius</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>
+    <span class="ruby-identifier">distance</span> = <span class="ruby-ivar">@earth_radius</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">distance</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

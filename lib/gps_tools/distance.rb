@@ -11,6 +11,9 @@ class GPSTools::Distance
         end
     end
 
+    ##
+    # Returns the distance in miles (unit = "mile"), kilometers (unit = "km"), or nautical miles (unit = "nm")
+    # between two gps coordinates, coord1 and coord2
     def get_distance(coord1, coord2)
         lat1 = coord1[0]
         long1 = coord1[1]
@@ -23,7 +26,8 @@ class GPSTools::Distance
         a = Math.sin(degrees_to_radians(lat_diff)/2) * Math.sin(degrees_to_radians(lat_diff)/2) + Math.sin(degrees_to_radians(long_diff)/2) * Math.sin(degrees_to_radians(long_diff)/2) * Math.cos(degrees_to_radians(lat1)) * Math.cos(degrees_to_radians(lat2))
         c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
         
-        return @earth_radius * c
+        distance = @earth_radius * c
+        return distance
     end
 
     private 

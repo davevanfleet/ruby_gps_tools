@@ -1,9 +1,7 @@
 class GPSTools::Geometry
-    def in_radius?(radius, center, coord)
-        distance = Distance.new.get_distance(center, coord)
-        distance <= radius
-    end
-
+    ##
+    # Returns a boolean that identifies if a given gps coordinate, coord, is within
+    # a given polygon (array of [lat, lng])
     def in_polygon?(polygon, coord)
         n = polygon.length
 
@@ -39,6 +37,14 @@ class GPSTools::Geometry
 
         # If odd number of intersections, we're good, if even, outside of polygon
         intersections % 2 == 1
+    end
+
+    ##
+    # Returns a boolean that identifies if a given gps coordinate, coord, is within
+    # a given radius of a center point, center
+    def in_radius?(radius, center, coord)
+        distance = Distance.new.get_distance(center, coord)
+        distance <= radius
     end
 
     private
